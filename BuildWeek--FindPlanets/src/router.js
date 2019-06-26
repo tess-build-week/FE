@@ -7,8 +7,8 @@
 
  const router = () => (
 <Switch>
-   <Route exact path="/" component={App}/>
-     <Route path="/Stars" component={theTeam}/>
+   <Route exact path="/" component={Login}/>
+     <PrivateRoute exact path="/Home" component={App}/>
    
 </Switch>
 
