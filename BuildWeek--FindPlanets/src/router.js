@@ -10,7 +10,7 @@
 <Switch>
    <Route exact path="/" component={login}/>
    <Route path="/secret" component={withAuth(Secret)} />
-     <PrivateRoute exact path="/Home" component={App}/>
+     <Route exact path="/Home" component={App}/>
    
 </Switch>
 

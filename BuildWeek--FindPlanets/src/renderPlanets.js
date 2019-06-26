@@ -11,10 +11,10 @@ class renderPlanets extends React.Component {
     };
   }
     componentDidMount(){
-      this.getPlanet("API Call");
+      this.getPlanet("https://build-week-tess.herokuapp.com/");
     }
     getPlanet = URL => {
-      axios.get("api call")
+      axios.get("https://build-week-tess.herokuapp.com/planets")
          .then(res => {
            console.log(res.data);
          })
