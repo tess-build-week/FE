@@ -1,5 +1,5 @@
-import React from './node_modules/react';
-import Planets from './node_modules/Planets.js.js'
+import React from 'react';
+import Planets from './Planets'
 import "./Planets.css";
 
 function PlanetList(props){

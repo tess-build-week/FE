@@ -1,51 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import PlanetList from './Components/Planets/PlanetList';
-import Topnav from './Components/Nav/Topnav';
-import Bottomnav from './Components/Nav/Bottomnav';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import withAuth from './Components/Login/withAuth';
+import Secret from './Components/Login/Secret';
+import Login from './Components/Login/login';
+import renderPlanets from './renderPlanets';
 
-class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      tessplanet:[]
-    };
-  }
-    componentDidMount(){
-      this.getPlanet("API Call");
-    }
-    getPlanet = URL => {
-      axios.get("api call")
-         .then(res => {
-           console.log(res.data);
-         })
-         .catch(err =>{
-           console.log(err);
-         })
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/secret">Secret</Link></li>
+          <li><Link to="/login">Login</Link></li>
+        </ul>
 
-      // fetch(URL)
-      //   axios.then(res => {
-      //     return res.json();
-      //   })
-      //   .then(data => {
-      //     this.setState({tessplanet: data.results});
-      //   })
-      //   .catch(err => {err
-      //     throw new Error();
-      //   });
-    };
-    render(){
-      return (
-         <div className="App">
-            <Topnav/> 
-           <PlanetList tessplanet ={this.state.tessplanet}/>
-           <Bottomnav/> 
-        </div>
-  );
+        <Switch>
+          <Route path="/" exact component={renderPlanets} />
+          <Route path="/secret" component={withAuth(Secret)} />
+          <Route path="/login" component={Login} />
+        </Switch>
+      </div>
+    );
   }
 }
-
-export default App;
