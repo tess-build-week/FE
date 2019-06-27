@@ -10,6 +10,10 @@ class renderPlanets extends React.Component {
       tessplanet:[]
     };
   }
+
+  //Mounting my component.
+
+  //this.getPlanet invokes my thing with the axios.get 
     componentDidMount(){
       this.getPlanet();
     }

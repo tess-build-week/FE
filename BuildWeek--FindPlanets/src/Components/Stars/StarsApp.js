@@ -10,21 +10,30 @@ class StarsApp extends React.Component {
       tessStars:[]
     };
   }
-    componentDidMount(){
-      this.getStars("api");
-    }
-    getStars = URL => {
-      fetch(URL)
-        .then(res => {
-          return res.json();
-        })
-        .then(data => {
-          this.setState({tessStars: data.results});
-        })
-        .catch(err => {
-          throw new Error(err);
-        });
-    };
+  //Mounting the star component 
+  componentDidMount(){
+    this.getStar();
+  }
+  getStar = URL => {
+    axios.get("https://build-week-tess.herokuapp.com/stars")
+       .then(res => {
+         console.log(res.data);
+       })
+       .catch(err =>{
+         console.log(err);
+       })
+
+    // fetch(URL)
+    //   axios.then(res => {
+    //     return res.json();
+    //   })
+    //   .then(data => {
+    //     this.setState({tessplanet: data.results});
+    //   })
+    //   .catch(err => {err
+    //     throw new Error();
+    //   });
+  };
     render(){
       return (
          <div className="App">

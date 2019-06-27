@@ -6,12 +6,10 @@ function Planets(props){
     return(
         <div className ="PlanetsCard">
             <div className = "PlanetInfo">
-                <p><strong>Name:</strong>{props.planet.name}</p>
-                <p><strong>Distance from Earth:</strong>{props.planet.distance}</p>
-                <p><strong>Lumosity:</strong>{props.planet.lumosity}</p>
-                <p><strong>Spectrum:</strong>{props.planet.spectrum}</p>
-                <p><strong>Metallicity:</strong>{props.planet.metallicity}</p>
-                <p><strong>Variablity:</strong>{props.planet.variablity}</p>
+                <p><strong>Name:</strong>{props.planet.planetid}</p>
+                <p><strong>orbit_period:</strong>{props.planet.orbit_period}</p>
+                <p><strong>Mass</strong>{props.planet.mass}</p>
+                <p><strong>radius:</strong>{props.planet.planet_radius}</p> 
             </div>
         </div>
     )
