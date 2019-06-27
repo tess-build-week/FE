@@ -10,7 +10,7 @@ export default class App extends Component {
   render() {
     console.log("inside App Render")
     return (
-      <div>
+      <div className = "NavBar">
         
        <ul>
           

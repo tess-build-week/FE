@@ -17,11 +17,15 @@
 .App-link {
   color: #61dafb;
 }
+.NavBar{
+  background: #1A036E;
+}
 li{
   text-decoration: none;
+  color:white;
 }
 .planetsbackground{
-  background-color:lightcoral;
+  background-image:url("https://raw.githubusercontent.com/tess-build-week/TESS-FE/master/output%20(1).png");
 }
 
 
