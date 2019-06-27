@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import StarsList from './Components/StarsList';
+
+
+import StarsList from './StarsList';
+import axios from "axios";
 
 class StarsApp extends React.Component {
   constructor(){
@@ -12,12 +13,14 @@ class StarsApp extends React.Component {
   }
   //Mounting the star component 
   componentDidMount(){
+    console.log("inside ComponentDIdMOunt2");
     this.getStar();
   }
   getStar = URL => {
-    axios.get("https://build-week-tess.herokuapp.com/stars")
+    axios.get("https://build-week-tess.herokuapp.com/stars/")
        .then(res => {
          console.log(res.data);
+         this.setState({tessStars: res.data})
        })
        .catch(err =>{
          console.log(err);
@@ -37,9 +40,9 @@ class StarsApp extends React.Component {
     render(){
       return (
          <div className="App">
-           <Topnav/>
-           <StarsList tessStars ={this.state.tessStars}/>
-           <Bottomnav/>
+          
+            <StarsList tessStars ={this.state.tessStars}/>
+           
         </div>
   );
   }

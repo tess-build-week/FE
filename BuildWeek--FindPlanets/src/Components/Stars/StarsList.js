@@ -1,15 +1,15 @@
 import React from 'react';
-import Stars from 'Stars.js'
-import "./Stars.css";
+import Stars from './Stars'
+// import "./Stars.css";
 
-function PlanetList(props){
+function StarsList(props){
     return (
         <div className = "planetList-wrapper">
-{props.tessStars.map(Stars => {
-    return <Planets star ={Stars}/> 
-})}
+{props.tessStars.map(ele => {
+     return <Stars star ={ele}/> 
+ })}
 
         </div>
     )
 }
-export default PlanetList;
+export default StarsList;

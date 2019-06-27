@@ -17,5 +17,11 @@
 .App-link {
   color: #61dafb;
 }
+li{
+  text-decoration: none;
+}
+.planetsbackground{
+  background-color:lightcoral;
+}
 
 

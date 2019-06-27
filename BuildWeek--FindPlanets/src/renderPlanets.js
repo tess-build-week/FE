@@ -15,12 +15,14 @@ class renderPlanets extends React.Component {
 
   //this.getPlanet invokes my thing with the axios.get 
     componentDidMount(){
+      console.log("inside ComponentDIdMOunt");
       this.getPlanet();
     }
     getPlanet = URL => {
       axios.get("https://build-week-tess.herokuapp.com/planets")
          .then(res => {
            console.log(res.data);
+           this.setState({tessplanet: res.data})
          })
          .catch(err =>{
            console.log(err);
@@ -38,8 +40,9 @@ class renderPlanets extends React.Component {
       //   });
     };
     render(){
+      
       return (
-         <div>
+         <div className ="planetsbackground">
            <PlanetList tessplanet ={this.state.tessplanet}/>
         </div>
   );
