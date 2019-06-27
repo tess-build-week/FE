@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import StarsList from './Components/StarsList';
+
+
+import StarsList from './StarsList';
+import axios from "axios";
 
 class StarsApp extends React.Component {
   constructor(){
@@ -10,27 +11,38 @@ class StarsApp extends React.Component {
       tessStars:[]
     };
   }
-    componentDidMount(){
-      this.getStars("api");
-    }
-    getStars = URL => {
-      fetch(URL)
-        .then(res => {
-          return res.json();
-        })
-        .then(data => {
-          this.setState({tessStars: data.results});
-        })
-        .catch(err => {
-          throw new Error(err);
-        });
-    };
+  //Mounting the star component 
+  componentDidMount(){
+    console.log("inside ComponentDIdMOunt2");
+    this.getStar();
+  }
+  getStar = URL => {
+    axios.get("https://build-week-tess.herokuapp.com/stars/")
+       .then(res => {
+         console.log(res.data);
+         this.setState({tessStars: res.data})
+       })
+       .catch(err =>{
+         console.log(err);
+       })
+
+    // fetch(URL)
+    //   axios.then(res => {
+    //     return res.json();
+    //   })
+    //   .then(data => {
+    //     this.setState({tessplanet: data.results});
+    //   })
+    //   .catch(err => {err
+    //     throw new Error();
+    //   });
+  };
     render(){
       return (
          <div className="App">
-           <Topnav/>
-           <StarsList tessStars ={this.state.tessStars}/>
-           <Bottomnav/>
+          
+            <StarsList tessStars ={this.state.tessStars}/>
+           
         </div>
   );
   }

@@ -6,7 +6,7 @@ function PlanetList(props){
     return (
         <div className = "planetList-wrapper">
 {props.tessplanet.map(planet => {
-    return <Planets planet ={planet}/> 
+    return <Planets planet ={planet}/>
 })}
 
         </div>

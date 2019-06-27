@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
 .App-header {
   background-color: #282c34;
@@ -21,6 +16,16 @@
 
 .App-link {
   color: #61dafb;
+}
+.NavBar{
+  background: #1A036E;
+}
+li{
+  text-decoration: none;
+  color:white;
+}
+.planetsbackground{
+  background-image:url("https://raw.githubusercontent.com/tess-build-week/TESS-FE/master/output%20(1).png");
 }
 
 
