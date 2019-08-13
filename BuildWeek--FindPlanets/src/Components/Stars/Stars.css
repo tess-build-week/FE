@@ -8,9 +8,7 @@ body,html{
 p{
     color:white;
 }
-.Starsdiv{
-    background-image: url(https://raw.githubusercontent.com/tess-build-week/TESS-FE/master/StarsBackground.png)
-}
+
 .App{
     text-align: left;
     height:100%;
@@ -22,7 +20,7 @@ p{
     background-repeat: none;
 
 }
-.PlanetsCard{
+.StarCard{
     /* background:#00C9FF; */
     background-image:url("https://raw.githubusercontent.com/tess-build-week/TESS-FE/master/picture-of-the-earth-height-of-20000px-Google-Search.png");
     text-align:center;
@@ -35,12 +33,12 @@ p{
 }
 
 
-.planetList-wrapper{
+.starList-wrapper{
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
   }
-  .planetInfo{
+  .starInfo{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;

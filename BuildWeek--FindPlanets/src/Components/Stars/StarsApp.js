@@ -39,7 +39,7 @@ class StarsApp extends React.Component {
   };
     render(){
       return (
-         <div className="App">
+         <div className="Starsdiv">
           
             <StarsList tessStars ={this.state.tessStars}/>
            
